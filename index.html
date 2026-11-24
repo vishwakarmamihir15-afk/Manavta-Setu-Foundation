@@ -764,7 +764,6 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const CASHFREE_FORM_URL = "https://payments.cashfree.com/forms/manavta-setu-foundation";
-    // Optional: Apni Google Apps Script Web App URL yahan paste kar sakte ho sheet logging ke liye
     const APPS_SCRIPT_URL = "";
 
     const amountSelect = document.getElementById("amountSelect");
@@ -798,7 +797,7 @@
 
     customAmountInput.addEventListener("input", updateDisplayedAmount);
 
-    donationForm.addEventListener("submit", async function (e) {
+    donationForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
       const name = document.getElementById("fullName").value.trim();
@@ -823,29 +822,28 @@
       };
 
       statusMsg.style.display = "block";
-      statusMsg.textContent =
+      statusMsg.innerHTML =
         "Dhanyawad " +
         name +
         " ji! ₹" +
         amount +
-        " ke daan ke liye aapko Cashfree payment page par bheja ja raha hai...";
+        " ke daan ke liye aapko Cashfree page par bheja ja raha hai... " +
+        '<a href="' +
+        CASHFREE_FORM_URL +
+        '" style="text-decoration:underline;font-weight:700;">Yahan click karein</a>';
 
       if (APPS_SCRIPT_URL) {
-        try {
-          await fetch(APPS_SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-          });
-        } catch (err) {
+        fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }).catch(function (err) {
           console.error("Sheet logging error:", err);
-        }
+        });
       }
 
-      setTimeout(function () {
-        window.location.href = CASHFREE_FORM_URL;
-      }, 450);
+      window.location.assign(CASHFREE_FORM_URL);
     });
   </script>
 </body>
