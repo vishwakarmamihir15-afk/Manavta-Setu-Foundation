@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manavta Setu Foundation</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: #0e1c30;
+      --surface-2: #142742;
+      --text: #f3f7fc;
+      --muted: #a7b8d1;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 17, 31, 0.9);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 20;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: var(--accent);
+      color: #04101d;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 680px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .action-box {
+      background: linear-gradient(145deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">Manavta Setu Foundation</a>
+      <nav class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#initiatives">Initiatives</a>
+        <a href="#get-involved">Get Involved</a>
+      </nav>
+      <a href="#get-involved" class="btn">Connect With Us</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Manavta Setu Foundation</span>
+        <h1>Building Bridges of Support for Communities in Need</h1>
+        <p>
+          Manavta Setu Foundation is dedicated to meaningful community support, essential aid,
+          and structured grassroots initiatives. Base structure ready—add your custom programs,
+          registration/support forms, and links next.
+        </p>
+        <div class="hero-actions">
+          <a href="#get-involved" class="btn">Get Started</a>
+          <a href="#initiatives" class="btn btn-outline">Explore Initiatives</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="container">
+        <h2 class="section-title">Our Mission</h2>
+        <p class="section-sub">
+          A clean placeholder section ready for your exact mission statement, focus areas, and
+          community impact goals.
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Essential Support</h3>
+            <p>Placeholder card for core relief, food, shelter, or day-to-day community assistance.</p>
+          </div>
+          <div class="card">
+            <h3>Ground Reach</h3>
+            <p>Placeholder card for local outreach, volunteer drives, and regional support programs.</p>
+          </div>
+          <div class="card">
+            <h3>Transparent Action</h3>
+            <p>Placeholder card for updates, program details, and clear public communication.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="initiatives">
+      <div class="container">
+        <h2 class="section-title">Key Initiatives</h2>
+        <p class="section-sub">
+          Customize these cards as soon as you share the exact activities or campaigns for Manavta Setu Foundation.
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Initiative 01</h3>
+            <p>Add program title, objective, and key details here.</p>
+          </div>
+          <div class="card">
+            <h3>Initiative 02</h3>
+            <p>Add program title, objective, and key details here.</p>
+          </div>
+          <div class="card">
+            <h3>Initiative 03</h3>
+            <p>Add program title, objective, and key details here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="get-involved">
+      <div class="container">
+        <div class="action-box">
+          <div>
+            <h2>Ready for Custom Modules</h2>
+            <p class="section-sub" style="margin-bottom: 0;">
+              Tell me what to add next—forms, Apps Script/Sheets backend, payment/contribution links,
+              FAQs, or new sections.
+            </p>
+          </div>
+          <a href="#" class="btn">Action Slot Ready</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Manavta Setu Foundation. All rights reserved.</span>
+      <span>Hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
