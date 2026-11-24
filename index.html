@@ -539,7 +539,6 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero">
       <div class="container">
         <span class="pill">Manavta Setu Foundation • Ek Chhoti Si Pehal, Ek Bada Badlav</span>
@@ -566,7 +565,6 @@
       </div>
     </section>
 
-    <!-- Seva Karya Section -->
     <section id="seva">
       <div class="container">
         <div class="section-head">
@@ -642,7 +640,6 @@
       </div>
     </section>
 
-    <!-- Emotional Story & Sankalp Section -->
     <section id="sankalp" class="bg-cream">
       <div class="container">
         <div class="story-box">
@@ -675,7 +672,6 @@
       </div>
     </section>
 
-    <!-- Donation Form Section -->
     <section id="sahayog">
       <div class="container">
         <div class="section-head">
@@ -767,6 +763,10 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    const CASHFREE_FORM_URL = "https://payments.cashfree.com/forms/manavta-setu-foundation";
+    // Optional: Apni Google Apps Script Web App URL yahan paste kar sakte ho sheet logging ke liye
+    const APPS_SCRIPT_URL = "";
+
     const amountSelect = document.getElementById("amountSelect");
     const customAmountWrap = document.getElementById("customAmountWrap");
     const customAmountInput = document.getElementById("customAmount");
@@ -798,7 +798,7 @@
 
     customAmountInput.addEventListener("input", updateDisplayedAmount);
 
-    donationForm.addEventListener("submit", function (e) {
+    donationForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       const name = document.getElementById("fullName").value.trim();
@@ -814,9 +814,13 @@
         return;
       }
 
-      // Cashfree integration hook ready for next step:
-      const donorData = { name, phone, amount };
-      console.log("Ready for Cashfree checkout:", donorData);
+      const payload = {
+        name,
+        phone,
+        amount,
+        foundation: "Manavta Setu Foundation",
+        timestamp: new Date().toISOString()
+      };
 
       statusMsg.style.display = "block";
       statusMsg.textContent =
@@ -824,7 +828,24 @@
         name +
         " ji! ₹" +
         amount +
-        " ke daan ke liye aapki details tayar hain. Agle step me Cashfree payment gateway connect kiya jayega.";
+        " ke daan ke liye aapko Cashfree payment page par bheja ja raha hai...";
+
+      if (APPS_SCRIPT_URL) {
+        try {
+          await fetch(APPS_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+        } catch (err) {
+          console.error("Sheet logging error:", err);
+        }
+      }
+
+      setTimeout(function () {
+        window.location.href = CASHFREE_FORM_URL;
+      }, 450);
     });
   </script>
 </body>
