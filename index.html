@@ -50,7 +50,6 @@
       padding: 0 20px;
     }
 
-    /* Top Blessing Strip */
     .top-strip {
       background: linear-gradient(90deg, #fef3c7, #fde68a, #fef3c7);
       color: #78350f;
@@ -61,7 +60,6 @@
       border-bottom: 1px solid #f5d076;
     }
 
-    /* Header */
     header {
       background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
@@ -120,7 +118,7 @@
       padding: 13px 24px;
       border-radius: 12px;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       background: linear-gradient(135deg, #fbbf24, #f59e0b);
       color: #2b1900;
       border: 1px solid #f59e0b;
@@ -145,7 +143,6 @@
       background: var(--saffron-tint);
     }
 
-    /* Hero */
     .hero {
       background: radial-gradient(circle at top center, #fff7d6 0%, #fffdf7 55%, #ffffff 100%);
       padding: 72px 0 64px;
@@ -212,7 +209,6 @@
       font-weight: 500;
     }
 
-    /* Sections */
     section {
       padding: 68px 0;
     }
@@ -254,7 +250,6 @@
       font-size: 1.02rem;
     }
 
-    /* Seva Cards Grid */
     .seva-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -310,7 +305,6 @@
       border: 1px solid #fde68a;
     }
 
-    /* Emotional Story Split */
     .story-box {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
@@ -369,7 +363,6 @@
       font-weight: 700;
     }
 
-    /* Support / Connect Section */
     .connect-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -420,57 +413,74 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 30px;
+      padding: 32px;
       box-shadow: var(--shadow);
     }
 
     .form-card h3 {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       margin-bottom: 6px;
     }
 
     .form-card > p {
       color: var(--muted);
-      font-size: 0.92rem;
-      margin-bottom: 18px;
+      font-size: 0.93rem;
+      margin-bottom: 20px;
     }
 
     .field {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .field label {
       display: block;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 6px;
       color: #2c333f;
     }
 
     .field input,
-    .field select,
-    .field textarea {
+    .field select {
       width: 100%;
-      padding: 11px 14px;
+      padding: 12px 14px;
       border-radius: 10px;
       border: 1px solid #e2d5b5;
       background: #fffdf9;
       font-family: inherit;
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       color: var(--text);
     }
 
     .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
+    .field select:focus {
       outline: none;
       border-color: var(--warm-gold);
       background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.14);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .amount-preview {
+      background: var(--saffron-tint);
+      border: 1px dashed #f59e0b;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 0.92rem;
+      color: #78350f;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .status-msg {
       display: none;
-      margin-top: 12px;
+      margin-top: 14px;
       padding: 12px 14px;
       border-radius: 10px;
       background: #fef3c7;
@@ -480,7 +490,6 @@
       font-weight: 600;
     }
 
-    /* Footer */
     footer {
       background: #fffbeb;
       border-top: 1px solid #f3d999;
@@ -523,9 +532,9 @@
       <nav class="nav-links">
         <a href="#seva">Hamare Seva Karya</a>
         <a href="#sankalp">Hamara Sankalp</a>
-        <a href="#sahayog">Sahayog Karein</a>
+        <a href="#sahayog">Daan Karein</a>
       </nav>
-      <a href="#sahayog" class="btn">Seva Se Judein</a>
+      <a href="#sahayog" class="btn">Daan Karein</a>
     </div>
   </header>
 
@@ -543,7 +552,7 @@
           kehne ko toh koi nahi hota, par unki aankhon me ummeed abhi bhi zinda hoti hai.
         </p>
         <div class="hero-actions">
-          <a href="#sahayog" class="btn">Apna Sahayog Dein</a>
+          <a href="#sahayog" class="btn">Abhi Daan Karein</a>
           <a href="#seva" class="btn btn-white">Hamare Seva Karya Dekhein</a>
         </div>
 
@@ -666,52 +675,47 @@
       </div>
     </section>
 
-    <!-- Sahayog & Form Section -->
+    <!-- Donation Form Section -->
     <section id="sahayog">
       <div class="container">
         <div class="section-head">
-          <span class="section-tag">Saath Judein</span>
-          <h2>Aapka Ek Chhota Sa Kadam Kisi Ki Zindagi Badal Sakta Hai</h2>
+          <span class="section-tag">Seva Sahayog</span>
+          <h2>Aapka Ek Chhota Sa Daan Kisi Ki Zindagi Badal Sakta Hai</h2>
           <p>
-            Chahe aap aarthik sahayog karna chahein, volunteer banna chahein, ya kisi zarooratmand parivar ki
-            jaankari dena chahein—neeche diye gaye form se hamare saath seedha judein.
+            Aap ₹51 se shuruat kar sakte hain ya apni ichha anusaar koi bhi rashi daan kar sakte hain—har
+            yogdan seedha bhojan, aashray, baadh rahat aur bachchon ke ilaaj me lagaya jaata hai.
           </p>
         </div>
 
         <div class="connect-grid">
           <div class="info-panel">
-            <h3>Aap Kaise Madad Kar Sakte Hain?</h3>
+            <h3>Aapka Sahayog Kahan Lagta Hai?</h3>
             <p>
-              Seva ke liye bade daan ki nahi, sachche man ki zaroorat hoti hai. Aap in tarikon se Manavta Setu
-              Foundation ka hissa ban sakte hain:
+              Seva ke liye bade daan ki nahi, sachche man ki zaroorat hoti hai. Aapke yogdan se hum yeh
+              zameeni kaam aage badhate hain:
             </p>
 
             <div class="way-item">
               <strong>1. Annadaan & Ration Sahayog</strong>
-              <span>Kisi ek din ke bhojan ya ek parivar ke mahine bhar ke ration ki zimmedari lein.</span>
+              <span>Bhookhe aur beghar logon ko garam bhojan aur zaroori ration pahunchana.</span>
             </div>
 
             <div class="way-item">
-              <strong>2. Bachchon Ke Ilaaj & Shiksha Me Yogdan</strong>
-              <span>Beemar bachchon ki dawai ya padhai ki samagri ke liye apna sahayog dein.</span>
+              <strong>2. Bachchon Ke Ilaaj & Dawai</strong>
+              <span>Beemar bachchon ke doctor checkup, jaanch aur dawaiyon me turant madad.</span>
             </div>
 
             <div class="way-item">
-              <strong>3. Volunteer Ya Kshetra Sahayogi Banein</strong>
-              <span>Baadh rahat, bhojan vitran aur survey karyon me apna samay aur shram dein.</span>
-            </div>
-
-            <div class="way-item">
-              <strong>4. Kisi Zarooratmand Ki Suchna Dein</strong>
-              <span>Yadi aapke aas-paas kisi ko turant madad chahiye, toh humein details bhejein.</span>
+              <strong>3. Baadh & Aapda Rahat</strong>
+              <span>Sankat ke samay peedit parivaron ko chhat, kapde aur khane ki vyavastha.</span>
             </div>
           </div>
 
           <div class="form-card">
-            <h3>Seva / Sahayog Aavedan Form</h3>
-            <p>Apni jaankari bharein—hamari team aapse jaldi sampark karegi.</p>
+            <h3>Seva / Sahayog Daan Form</h3>
+            <p>Apna naam, mobile number aur sahayog rashi chunein.</p>
 
-            <form id="sevaForm">
+            <form id="donationForm">
               <div class="field">
                 <label for="fullName">Aapka Poora Naam *</label>
                 <input type="text" id="fullName" name="fullName" placeholder="Apna naam likhein" required />
@@ -719,32 +723,28 @@
 
               <div class="field">
                 <label for="phone">Mobile / WhatsApp Number *</label>
-                <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required />
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required />
               </div>
 
               <div class="field">
-                <label for="city">Shehar / Gaon (Location) *</label>
-                <input type="text" id="city" name="city" placeholder="Jaise: Varanasi, Thane, Patna..." required />
-              </div>
-
-              <div class="field">
-                <label for="purpose">Aap Kis Tarah Judna Chahte Hain? *</label>
-                <select id="purpose" name="purpose" required>
-                  <option value="Annadaan / Ration Sahayog">Annadaan / Ration Sahayog</option>
-                  <option value="Aashray / Ghar Vyavastha Sahayog">Aashray / Ghar Vyavastha Sahayog</option>
-                  <option value="Baadh / Aapda Rahat Sahayog">Baadh / Aapda Rahat Sahayog</option>
-                  <option value="Bachchon Ke Medical Support Ke Liye">Bachchon Ke Medical Support Ke Liye</option>
-                  <option value="Volunteer Banna Chahta/Chahti Hoon">Volunteer Banna Chahta/Chahti Hoon</option>
-                  <option value="Kisi Zarooratmand Ki Madad Ke Liye Suchna">Kisi Zarooratmand Ki Madad Ke Liye Suchna</option>
+                <label for="amountSelect">Daan Rashi Chunein (Amount) *</label>
+                <select id="amountSelect" name="amountSelect" required>
+                  <option value="51">₹51 — Ek Pavitra Shuruat</option>
+                  <option value="other">Other (Apni Pasand Ki Rashi Dalein)</option>
                 </select>
               </div>
 
-              <div class="field">
-                <label for="message">Aapka Sandesh Ya Details</label>
-                <textarea id="message" name="message" rows="3" placeholder="Apni baat ya zarooratmand ki jaankari likhein..."></textarea>
+              <div class="field hidden" id="customAmountWrap">
+                <label for="customAmount">Apni Mann Pasand Rashi Likhein (₹) *</label>
+                <input type="number" id="customAmount" name="customAmount" min="1" placeholder="Jaise: 101, 251, 501, 1100..." />
               </div>
 
-              <button type="submit" class="btn" style="width: 100%;">Sandesh Bhejein</button>
+              <div class="amount-preview">
+                <span>Kul Daan Rashi:</span>
+                <span id="finalAmountDisplay">₹51</span>
+              </div>
+
+              <button type="submit" class="btn" style="width: 100%;">Daan Karein</button>
               <div id="statusMsg" class="status-msg"></div>
             </form>
           </div>
@@ -767,16 +767,64 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.getElementById("sevaForm").addEventListener("submit", function (e) {
+    const amountSelect = document.getElementById("amountSelect");
+    const customAmountWrap = document.getElementById("customAmountWrap");
+    const customAmountInput = document.getElementById("customAmount");
+    const finalAmountDisplay = document.getElementById("finalAmountDisplay");
+    const donationForm = document.getElementById("donationForm");
+    const statusMsg = document.getElementById("statusMsg");
+
+    function updateDisplayedAmount() {
+      if (amountSelect.value === "other") {
+        const val = Number(customAmountInput.value);
+        finalAmountDisplay.textContent = val > 0 ? "₹" + val : "₹0";
+      } else {
+        finalAmountDisplay.textContent = "₹" + amountSelect.value;
+      }
+    }
+
+    amountSelect.addEventListener("change", function () {
+      if (this.value === "other") {
+        customAmountWrap.classList.remove("hidden");
+        customAmountInput.required = true;
+        customAmountInput.focus();
+      } else {
+        customAmountWrap.classList.add("hidden");
+        customAmountInput.required = false;
+        customAmountInput.value = "";
+      }
+      updateDisplayedAmount();
+    });
+
+    customAmountInput.addEventListener("input", updateDisplayedAmount);
+
+    donationForm.addEventListener("submit", function (e) {
       e.preventDefault();
+
       const name = document.getElementById("fullName").value.trim();
-      const status = document.getElementById("statusMsg");
-      status.style.display = "block";
-      status.textContent =
+      const phone = document.getElementById("phone").value.trim();
+      const amount =
+        amountSelect.value === "other"
+          ? Number(customAmountInput.value)
+          : Number(amountSelect.value);
+
+      if (!amount || amount < 1) {
+        statusMsg.style.display = "block";
+        statusMsg.textContent = "Kripya kam se kam ₹1 ki sahi daan rashi darj karein.";
+        return;
+      }
+
+      // Cashfree integration hook ready for next step:
+      const donorData = { name, phone, amount };
+      console.log("Ready for Cashfree checkout:", donorData);
+
+      statusMsg.style.display = "block";
+      statusMsg.textContent =
         "Dhanyawad " +
         name +
-        " ji! Manavta Setu Foundation me aapka sandesh darj ho gaya hai. Hamari team jald hi aapse sampark karegi.";
-      this.reset();
+        " ji! ₹" +
+        amount +
+        " ke daan ke liye aapki details tayar hain. Agle step me Cashfree payment gateway connect kiya jayega.";
     });
   </script>
 </body>
